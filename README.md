@@ -1,4 +1,4 @@
-# snfeedback
+# Subnautica feedback
 Subnautica is an underwater adventure game <a href="http://store.steampowered.com/app/264710/">available on Steam.</a> It uses an in-built player feedback system. At GDC 2015 this system was presented as part of the IGS Tech Toolbox series of talks.
 
 Subnautica's feedback system is comprised of an in-game Unity GUI front end, a data-presentation web end, and a data-collection back-end.

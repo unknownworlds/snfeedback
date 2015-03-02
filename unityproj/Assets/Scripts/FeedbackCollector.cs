@@ -98,12 +98,6 @@ public class FeedbackCollector : MonoBehaviour {
 		return hashString;
 	}
 	
-	void GetPlayerPosition ()
-	{
-		player = GameObject.FindWithTag ("Player");
-		playerPosition = player.transform.position;
-	}
-	
 	private IEnumerator SendFeedback (WWW w)
 	{
 		feedbackWWW = w;
@@ -133,11 +127,12 @@ public class FeedbackCollector : MonoBehaviour {
 	void UploadProgress ()
 	{
 		
-		int sendingPc = Mathf.Round(feedbackWWW.uploadProgress * 100);
+		float sendingPc = Mathf.Round(feedbackWWW.uploadProgress * 100);
 		Debug.Log ("Feedback Panel: Upload progress - " + sendingPc.ToString () + "%");
 		if (sendingPc.Equals(100))
 		{
-			Invoke ("CloseSendingPanel",1.5f); //Delay gives user time to see successful transmission
+			//Here you could trigger some 'well done!' feedback to a user
+			Destroy (gameObject)
 		}
 	}
 	
